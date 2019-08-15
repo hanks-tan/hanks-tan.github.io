@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>地图作品展示</title>
+  <link href="/src/css/photo.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <photo v-for="(item,index) in photoList" :key="item.id" :item="item"></photo>
+  </div>
+  <script src="./photo.js" type="module"></script>
+</body>
+</html>
