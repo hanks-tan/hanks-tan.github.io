@@ -669,5 +669,3 @@ var WindyLayer = function (_ol$layer$Image) {
 return WindyLayer;
 
 })));
-
-export default WindyLayer
