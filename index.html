@@ -1,17 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <link href="./src/css/base.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello world</h1>
-    <div id="content">
-        <span>示例内容</span>
-        <a href="/example/windy/windy.html">风场</a>
-        <a href="/src/my_work/photo.html">地图可视化作品</a>
+  <!-- 顶部 -->
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>GIS 前端开发示例</h1>
+  </div>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">主页</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Openlayers
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">遮罩</a></li>
+              <li><a href="#">电子围栏</a></li>
+              <li class="divider"></li>
+              <li><a href="/example/windy/windy.html">动态风场</a></li>
+              <li><a href="#">全国空气质量图</a></li>
+              <li><a href="#">热力图</a></li>
+              <li><a href="#">流线</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Leaflet</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Echarts
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">全国空气质量</a></li>
+              <li><a href="#">EJB</a></li>
+              </ul>
+          </li>
+          <li><a href="/src/my_work/photo.html">图片展示</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+    
+  <div class="container">
+      
+    <div class="row">
+        
+      <div class="mapview" >
+        地图
+      </div>
+        
+    </div>
+      
+  </div>
+  <!-- 底部 -->
+  <div id="app" class="jumbotron text-center" style="margin-bottom:0">
+    <p>底部内容</p>
+    <router-view></router-view>
+  </div>
+  <script src="/src/route/index.js" type="module"></script>
 </body>
 </html>
