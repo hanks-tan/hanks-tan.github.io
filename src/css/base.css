@@ -1,4 +1,10 @@
-.mapview{
-  height: 500px;
+.map-container{
+  min-height: 500px;
   width: 100%;
+}
+.ol-zoom{
+  display: none;
+}
+.ol-attribution{
+  display: none;
 }

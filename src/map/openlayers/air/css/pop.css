@@ -1,0 +1,39 @@
+.ol-popup {
+  position: absolute;
+}
+.ol-popup-value {
+  text-align: center;
+  top: -24px;
+  border: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 12px;
+  font-family: 微软雅黑;
+  color: #424242;
+  min-width: 36px;
+  width: max-content;
+  position: absolute;
+}
+
+.ol-popup-ect{
+  top: -4px;
+  left: 5px;
+  border: 8px solid transparent;
+  position: absolute;
+}
+
+.ol-popup-name{
+  text-align: center;
+  top: 3px;
+  border: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 12px;
+  font-family: 微软雅黑;
+  color: #807474;
+  min-width: 36px;
+  align-content: center;
+  width: max-content;
+  background-color: rgba(234, 225, 225, 0.8);
+  position: absolute;
+}
