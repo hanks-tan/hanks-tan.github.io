@@ -1,10 +1,12 @@
 import mapView from '/src/components/mapView.js'
+import util from '/src/util/util.js'
 
 export default {
   template: '<div><map-view ref="mapview"></map-view></div>',
   data(){
     return {
-      dataURL: '/src/map/openlayers/air/data/airdata.geojson',
+      dataURL: '/src/route/map/openlayers/air/data/airdata.geojson',
+      cssfile: '/src/route/map/openlayers/air/css/pop.css',
       view: undefined,
       map: undefined,
       colors: ['67, 206 ,23', '225, 215, 44', '247, 45, 14', '167, 19, 76'],
@@ -14,8 +16,11 @@ export default {
     'map-view': mapView
   },
   mounted() {
-    this.loadStyle()
+    util.loadStyle(this.cssfile)
     this.init()
+  },
+  beforeDestroy() {
+    util.romoveStyle(this.cssfile)
   },
   methods: {
     init(){
@@ -124,14 +129,6 @@ export default {
       }else{
         return false
       }
-    },
-
-    loadStyle (){
-      let head = document.getElementsByTagName('head')[0]
-      let link = document.createElement('link')
-      link.href = '/src/map/openlayers/air/css/pop.css'
-      link.rel = 'stylesheet'
-      head.appendChild(link)
     }
   },
 }
