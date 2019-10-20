@@ -5,7 +5,7 @@ export default {
   template: '<div><map-view ref="mapview"></map-view></div>',
   data(){
     return {
-      dataURL: '/src/route/map/openlayers/air/data/airdata.geojson',
+      dataURL: '/src/route/map/openlayers/air/data/china_city_aqi.geojson',
       cssfile: '/src/route/map/openlayers/air/css/pop.css',
       view: undefined,
       map: undefined,
@@ -36,8 +36,8 @@ export default {
 
       this.view = new ol.View({
         projection: 'EPSG:4326',
-        zoom: 4,
-        center: [114, 32]
+        zoom: 5,
+        center: [106.192619,34.528267]
       })
 
       this.map = this.$refs['mapview'].map
@@ -53,7 +53,7 @@ export default {
     },
     createStyle (feature, resolution){
       let zoom = this.view.getZoomForResolution(resolution)
-      if(zoom > 4) {
+      if(zoom > 5) {
         let t = this.labelIsExist(feature)
         if(!t){
           this.showLabel(feature)
@@ -106,7 +106,7 @@ export default {
       ectEle.className = 'ol-popup-ect'
       nameEle.className = 'ol-popup-name'
       valueEle.innerText = feature.get('AQI')
-      nameEle.innerText = feature.get('NAME')
+      nameEle.innerText = feature.get('city')
       let color = this.getColor(feature.get('AQI'))
       valueEle.style.backgroundColor = 'rgba(' + color + ', 0.8)'
       ectEle.style.borderTopColor = 'rgba(' + color + ', 0.8)'
