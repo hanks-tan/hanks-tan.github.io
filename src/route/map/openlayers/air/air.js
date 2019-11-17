@@ -5,7 +5,7 @@ export default {
   template: '<div><map-view ref="mapview"></map-view></div>',
   data(){
     return {
-      dataURL: '/src/route/map/openlayers/air/data/china_city_aqi.geojson',
+      dataURL: '/src/route/map/openlayers/air/data/china_city_aqi1.geojson',
       cssfile: '/src/route/map/openlayers/air/css/pop.css',
       view: undefined,
       map: undefined,
@@ -65,7 +65,7 @@ export default {
         this.clearLabel()
         return new ol.style.Style({
           image: new ol.style.Circle({
-            radius: 5,
+            radius: 6,
             fill: new ol.style.Fill({
               color: 'rgb(' + this.getColor(feature.get('AQI')) + ')'
             })
