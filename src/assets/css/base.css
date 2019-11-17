@@ -1,0 +1,20 @@
+head,body{
+  background-color: #dcdfd9;
+}
+.map-container{
+  min-height: 500px;
+  width: 100%;
+}
+.defalut-map{
+  height: inherit;
+  width: 100%;
+}
+.ol-zoom{
+  display: none;
+}
+.ol-attribution{
+  display: none;
+}
+.ol-rotate{
+  display: none;
+}
